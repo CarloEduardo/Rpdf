@@ -1,0 +1,352 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+  a4paper,
+  oneside]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{helvet}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=2cm,left=2.5cm,right=2.5cm,bottom=3.5cm]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+\ifPDFTeX
+\else
+\babelfont{rm}[]{helvet}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{lscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+\newcommand{\Rlogo}{\protect\includegraphics[height=1.8ex,keepaspectratio]{images/Rlogo.png}}
+\usepackage{floatrow}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
+\floatsetup[figure]{capposition=top}
+\floatsetup[table]{capposition=top}
+\addtolength{\skip\footins}{1pc plus 2pt}
+\usepackage{titlesec}
+\titleformat*{\section}{\filright \normalsize \bfseries}
+\titleformat*{\subsection}{\filright \normalsize\bfseries}
+\titleformat*{\subsubsection}{\filright \normalsize\bfseries}
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection \arabic{subsubsection}.}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{colortbl}
+\usepackage{array}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage{graphicx}
+\usepackage{hhline,colortbl}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\pagestyle{fancy}
+\setlength{\headheight}{71pt}
+\addtolength{\topmargin}{-4pt}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{ \setlength{\arrayrulewidth}{0.35mm} \arrayrulecolor{white} \begin{tabular} { | >{\centering\arraybackslash}m{1.5cm} | >{\centering\arraybackslash}m{1.5cm} | >{\centering\arraybackslash}m{3cm} | >{\centering\arraybackslash}m{5cm} | >{\centering\arraybackslash}m{2.5cm} |} \includegraphics[width=1cm]{images/peru} & \cellcolor{red} \textcolor{white}{PERÚ} & \cellcolor[gray]{0.2} \scriptsize \textcolor{white}{Presidencia del Consejo de Ministros} & \cellcolor[gray]{0.4} \scriptsize \textcolor{white}{Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual} &  \cellcolor[gray]{0.5} \scriptsize \textcolor{white}{Dirección de Fiscalización} \\ \end{tabular}\\\vspace{5mm}}
+\fancyhead[C] {{\scriptsize "Decenio de la igualdad de oportunidades para mujeres y hombres"}\\ {\scriptsize "Año del Bicentenario del Perú{:} 200 años de independencia"}}
+\fancyfoot[C]{\thepage}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={DFI - Ficha de evaluación},
+  pdfauthor={DFI},
+  pdflang={es},
+  pdfkeywords={informe, r studio, r markdown},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\centerline{\textbf{FICHA DE EVALUACIÓN \protect\includegraphics[height=1.8ex,keepaspectratio]{images/Rlogo.png}}}
+
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\begin{table}
+\setlength\extrarowheight{5pt}
+\begin{tabular}
+  { 
+  | M{3.5cm} 
+  | M{3.5cm} 
+  | M{3.5cm}
+  | M{3.5cm}
+  |} 
+  \hline 
+  \textbf{Número de ficha} & 277148528 & \textbf{Fecha de elaboración} & 11-10-2023 \\ [10pt] 
+  \hline 
+  \end{tabular}
+\end{table}
+
+\section{APROBACIÓN}\label{aprobaciuxf3n}
+
+\begin{table}
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\setlength\extrarowheight{10pt}
+\begin{tabular}
+  { 
+  | M{3.5cm} 
+  | M{3.5cm} 
+  | M{7.5cm}
+  |} 
+  \hline 
+  \textbf{Nombres y apellidos} & \textbf{Cargo} & \textbf{Firma} \\ [20pt]
+  \hline 
+  DDD & NA & \\ [20pt]
+  \hline 
+  Kattya del Rosario Palacios Herrera & Jefa de Equipo Legal &  \\ [20pt]
+  \hline 
+  Mariajosé Calle Merino-Carrasco & Coordinadora de disuasión &  \\ [20pt]
+  \hline 
+  Dante Ramón Guerrero Barreto & Coordinador General &  \\ [20pt]
+  \hline 
+  Milagros Cecilia Pozo Ascuña & Directora &  \\ [20pt]
+  \hline
+  \end{tabular}
+\end{table}
+\vspace{5mm}
+
+\section{DATOS DEL REPORTE}\label{datos-del-reporte}
+
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\begin{table}
+\setlength\extrarowheight{5pt}
+\begin{tabular}
+  { 
+  | M{3.5cm} 
+  | M{3.5cm} 
+  | M{3.5cm}
+  | M{3.5cm}
+  |} 
+  \hline 
+  \textbf{Número del registro} & R-200-2023 & \textbf{Fecha del reporte} & 04-10-2023 \\ [10pt]
+  \hline 
+  \end{tabular}
+\end{table}
+
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\begin{table}
+\setlength\extrarowheight{3pt}
+\begin{tabular}
+  { 
+  | M{7.5cm} 
+  | M{7.5cm} 
+  |} 
+  \hline 
+  \textbf{Autor del reporte} & \textbf{Medio de recepción}  \\ [10pt]
+  \hline 
+   Redes sociales & Correo electrónico \\ [10pt]
+  \hline
+  \end{tabular}
+\end{table}
+
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\begin{table}
+\setlength\extrarowheight{3pt}
+\begin{tabular}
+  { 
+  | M{15.5cm}
+  |} 
+  \hline 
+  \textbf{Hecho reportado}  \\ [10pt]
+  \hline 
+   El 04 de octubre de 2023, del monitoreo permanente que realiza el Indecopi a través de los canales a los que tiene acceso, esta Dirección tomó conocimiento a través de una alerta vía correo electrónico que en las redes sociales se reportaba que la empresa promotora del evento  "Emilia Mernes" no estaría efectuando la devolución correspondiente al valor de las entradas adquiridas por los consumidores. Dicho evento estaba programado a realizarse inicialmente el 25 de noviembre de 2022 en el local denominado "Arena Perú", siendo reprogramado en más de una ocasión y por último cancelado. En ese sentido, el hecho de no devolver el monto de lo abonado por las entradas adquiridas para el referido evento, pese a que éste no se realizó en los términos inicialmente publicitados (cambio de fecha y local) siendo finalmente cancelado, podría configurar una presunta infracción al artículo 97 del Código de Protección y Defensa del Consumidor por parte de la empresa FANS & MUSIC ENTERTAIMENT S.A.C., identificada con número de RUC 20609462940, en su calidad de promotor del evento denominado "Emilia Mernes" (en adelante la empresa promotora). \\ [10pt]
+  \hline
+  \end{tabular}
+\end{table}
+
+\section{INDAGACIÓN ADICIONAL}\label{indagaciuxf3n-adicional}
+
+Se realizaron acciones indagatorias: \setlength{\arrayrulewidth}{0.35mm}
+\arrayrulecolor{black}
+
+\begin{table} 
+      \setlength\extrarowheight{5pt} 
+      \begin{tabular}{| M{3.5cm} | M{3.5cm} | M{3.5cm} | M{3.5cm}|} 
+      \hline 
+      \textbf{Destinatario del requerimiento} & \textbf{Fecha del requerimiento} & \textbf{¿Fue reiterado?} & \textbf{¿Recibió respuesta?} \\ [10pt] 
+      \hline\hline
+Empresa promotora & 2023-02-08 & No & Sí\\ [10pt]
+\hline
+Teleticket & 2023-05-17 & Sí & Sí\\ [10pt]
+
+      \hline\end{tabular} 
+      \end{table}
+
+\section{ANÁLISIS}\label{anuxe1lisis}
+
+\subsection{HECHO  1 }\subsubsection{Evaluación liminar}
+
+\begin{itemize}
+\tightlist
+\item
+  La fiscalización del bien o servicio y hecho reportado recae en las
+  Secretarías Técnicas de CC3, ILN o CCD.
+\item
+  El equipo NO cuenta con capacidad para programar acciones de
+  fiscalización durante el año en curso.
+\item
+  El equipo NO cuenta con capacidad para programar acciones de
+  fiscalización durante el TRIMESTRE en curso.
+
+  \subsubsection{Análisis de riesgo}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    El bien o servicio reportado SÍ ha sido incluido como parte del
+    diagnóstico para materia de protección al consumidor y competencia
+    desleal del PAF vigente.
+  \end{itemize}
+\item
+  El puntaje de riesgo para el bien seleccionado es: 7900 y su nivel de
+  riesgo es: Alto riesgo \setlength{\arrayrulewidth}{0.35mm}
+  \arrayrulecolor{black}
+
+  \begin{table}
+  \setlength\extrarowheight{3pt}
+  \begin{tabular}{| M{7.5cm} | M{7.5cm} |}
+  \hline
+  \textbf{Supuestos atenuantes} & \textbf{Sí(1)/No(0)} \\ [10pt]
+  \hline
+  \hline
+   Subsanación voluntaria & NA\\ [10pt]
+  \hline
+   Medidas para evitar nuevos casos & NA\\ [10pt]
+  \hline
+   Colaboración & NA\\ [10pt]
+  \hline
+   Otro & NA\\ [10pt]
+  \hline
+  \end{tabular}
+  \end{table}
+  \setlength{\arrayrulewidth}{0.35mm}
+  \arrayrulecolor{black}
+  \begin{table}
+  \setlength\extrarowheight{3pt}
+  \begin{tabular}{| M{7.5cm} | M{7.5cm} |}
+  \hline
+  \textbf{Supuestos agravantes} & \textbf{Sí(1)/No(0)} \\ [10pt]
+  \hline
+  \hline
+   Reincidencia en la conducta & 1\\ [10pt]
+  \hline
+   Daño a la salud & 0\\ [10pt]
+  \hline
+   No proporcionar información & 0\\ [10pt]
+  \hline
+   Otro & 0\\ [10pt]
+  \hline
+  \end{tabular}
+  \end{table}
+  \setlength{\arrayrulewidth}{0.35mm}
+  \arrayrulecolor{black}
+  \begin{table}
+  \setlength\extrarowheight{3pt}
+  \begin{tabular}{| M{15cm} |}
+  \hline
+  \textbf{Detalle la conducta del proveedor analizada para considerar los atenuantes y agravantes:} \\ [10pt]
+  \hline
+  \hline
+   No se identificaron agravantes o atenuantes\\ [10pt]
+  \hline
+  \end{tabular}
+  \end{table}
+\item
+  El puntaje de riesgo, considerando el valor del PAF y los atenuantes
+  y/o agravantes identificados es: 9480 y su nivel de riesgo es: Muy
+  alto riesgo
+
+  \subsubsection{Selección de acciones}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    La/s acción/es a realizar son: -Fiscalización clásica-
+  \end{itemize}
+\end{itemize}
+
+\section{RESULTADOS DE LA
+EVALUACIÓN}\label{resultados-de-la-evaluaciuxf3n}
+
+\setlength{\arrayrulewidth}{0.35mm}
+\arrayrulecolor{black}
+\setlength\extrarowheight{5pt}
+\begin{longtable}{| p{14.5cm} |}
+\hline
+\endhead
+\subsection{Resultados del Hecho  1 }- La fiscalización del bien o servicio y hecho reportado recae en las Secretarías Técnicas de CC3, ILN o CCD.\\ [10pt]
+- El equipo NO cuenta con capacidad para programar acciones de fiscalización durante el año en curso.\\ [10pt]
+- El equipo NO cuenta con capacidad para programar acciones de fiscalización durante el TRIMESTRE en curso.\\ [10pt]
+\hline
+\end{longtable}
+
+\end{document}

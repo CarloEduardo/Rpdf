@@ -1,0 +1,439 @@
+---
+title-meta: "DFI - Ficha de evaluación"
+author-meta: "DFI"
+date-meta: \today
+lang: es
+documentclass: article
+classoption: oneside
+keywords: informe, r studio, r markdown
+geometry:
+- top=2cm
+- left=2.5cm
+- right=2.5cm
+- bottom=3.5cm
+papersize: a4
+fontsize: 11pt
+header-includes:
+- \usepackage{lscape}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \newcommand{\Rlogo}{\protect\includegraphics[height=1.8ex,keepaspectratio]{images/Rlogo.png}}
+- \usepackage{floatrow}
+- \floatplacement{figure}{H}
+- \floatplacement{table}{H}
+- \floatsetup[figure]{capposition=top}
+- \floatsetup[table]{capposition=top}
+- \addtolength{\skip\footins}{1pc plus 2pt}
+- \usepackage{titlesec}
+- \titleformat*{\section}{\filright \normalsize \bfseries}
+- \titleformat*{\subsection}{\filright \normalsize\bfseries}
+- \titleformat*{\subsubsection}{\filright \normalsize\bfseries}
+- \renewcommand{\thesection}{\Roman{section}.}
+- \renewcommand{\thesubsection}{\Alph{subsection}.}
+- \renewcommand{\thesubsubsection}{\thesubsection \arabic{subsubsection}.}
+- \usepackage{helvet}
+- \renewcommand{\familydefault}{\sfdefault}
+- \usepackage{colortbl}
+- \usepackage{array}
+- \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+- \usepackage{graphicx}
+- \usepackage{hhline,colortbl}
+- \usepackage{fancyhdr}
+- \usepackage{longtable}
+- \pagestyle{fancy}
+- \setlength{\headheight}{71pt}
+- \addtolength{\topmargin}{-4pt}
+- \fancyhf{}
+- \renewcommand{\headrulewidth}{0pt}
+- \fancyhead[L]{
+  \setlength{\arrayrulewidth}{0.35mm} 
+  \arrayrulecolor{white} 
+  \begin{tabular} {
+  | >{\centering\arraybackslash}m{1.5cm} 
+  | >{\centering\arraybackslash}m{1.5cm} 
+  | >{\centering\arraybackslash}m{3cm}
+  | >{\centering\arraybackslash}m{5cm}
+  | >{\centering\arraybackslash}m{2.5cm} |} 
+  \includegraphics[width=1cm]{images/peru}
+  & \cellcolor{red} \textcolor{white}{PERÚ} 
+  & \cellcolor[gray]{0.2} \scriptsize \textcolor{white}{Presidencia del Consejo de Ministros} 
+  & \cellcolor[gray]{0.4} \scriptsize \textcolor{white}{Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual} 
+  &  \cellcolor[gray]{0.5} \scriptsize \textcolor{white}{Dirección de Fiscalización} \\ \end{tabular}\\\vspace{5mm}}
+- \fancyhead[C] {{\scriptsize
+  "Decenio de la igualdad de oportunidades para mujeres y hombres"}\\ {\scriptsize
+  "Año del Bicentenario del Perú{:} 200 años de independencia"}}
+- \fancyfoot[C]{\thepage}
+mainfont: helvet
+output:
+  pdf_document:
+    fig_caption: yes
+    number_sections: yes
+    toc: no
+---
+
+\centerline{\textbf{FICHA DE EVALUACIÓN \Rlogo}}
+
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\begin{table}
+\setlength\extrarowheight{5pt}
+\begin{tabular}
+  { 
+  | M{3.5cm} 
+  | M{3.5cm} 
+  | M{3.5cm}
+  | M{3.5cm}
+  |} 
+  \hline 
+  \textbf{Número de ficha} & `r j$ID` & \textbf{Fecha de elaboración} & `r j$date_only` \\ [10pt] 
+  \hline 
+  \end{tabular}
+\end{table}
+
+# APROBACIÓN
+
+\begin{table}
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\setlength\extrarowheight{10pt}
+\begin{tabular}
+  { 
+  | M{3.5cm} 
+  | M{3.5cm} 
+  | M{7.5cm}
+  |} 
+  \hline 
+  \textbf{Nombres y apellidos} & \textbf{Cargo} & \textbf{Firma} \\ [20pt]
+  \hline 
+  `r j$responsable` & `r j$cargo_responsable` & \\ [20pt]
+  \hline 
+  `r j$jefe` & `r j$cargojefe` &  \\ [20pt]
+  \hline 
+  Mariajosé Calle Merino-Carrasco & Coordinadora de disuasión &  \\ [20pt]
+  \hline 
+  Dante Ramón Guerrero Barreto & Coordinador General &  \\ [20pt]
+  \hline 
+  Milagros Cecilia Pozo Ascuña & Directora &  \\ [20pt]
+  \hline
+  \end{tabular}
+\end{table}
+\vspace{5mm}
+
+# DATOS DEL REPORTE
+
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\begin{table}
+\setlength\extrarowheight{5pt}
+\begin{tabular}
+  { 
+  | M{3.5cm} 
+  | M{3.5cm} 
+  | M{3.5cm}
+  | M{3.5cm}
+  |} 
+  \hline 
+  \textbf{Número del registro} & `r j$nro_registro` & \textbf{Fecha del reporte} & `r j$fecha_reporte` \\ [10pt]
+  \hline 
+  \end{tabular}
+\end{table}
+
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\begin{table}
+\setlength\extrarowheight{3pt}
+\begin{tabular}
+  { 
+  | M{7.5cm} 
+  | M{7.5cm} 
+  |} 
+  \hline 
+  \textbf{Autor del reporte} & \textbf{Medio de recepción}  \\ [10pt]
+  \hline 
+   `r j$autor_est` & `r j$medio_est` \\ [10pt]
+  \hline
+  \end{tabular}
+\end{table}
+
+\setlength{\arrayrulewidth}{0.35mm} 
+\arrayrulecolor{black} 
+\begin{table}
+\setlength\extrarowheight{3pt}
+\begin{tabular}
+  { 
+  | M{15.5cm}
+  |} 
+  \hline 
+  \textbf{Hecho reportado}  \\ [10pt]
+  \hline 
+   `r j$hecho` \\ [10pt]
+  \hline
+  \end{tabular}
+\end{table}
+
+# INDAGACIÓN ADICIONAL
+
+```{r, echo=FALSE, results='asis'}
+sub_names <- names %>%  filter(ID == j$ID)
+
+if(j$sinoreq == "Sí"){
+      cat("Se realizaron acciones indagatorias:")
+} else {
+  cat("")
+}
+
+if(j$sinoreq == "Sí") {
+  
+  cat("
+      \\setlength{\\arrayrulewidth}{0.35mm} 
+      \\arrayrulecolor{black} 
+      \\begin{table} 
+      \\setlength\\extrarowheight{5pt} 
+      \\begin{tabular}{| M{3.5cm} | M{3.5cm} | M{3.5cm} | M{3.5cm}|} 
+      \\hline 
+      \\textbf{Destinatario del requerimiento} & \\textbf{Fecha del requerimiento} & \\textbf{¿Fue reiterado?} & \\textbf{¿Recibió respuesta?} \\\\ [10pt] 
+      \\hline")
+  
+  for(i in 1:nrow(sub_names)) {
+    cat(paste0("\\hline\n", sub_names$name[i], " & ", sub_names$fecha_reporte[i], " & ", sub_names$sino_reitera[i]," & ", sub_names$sino_rpta[i], "\\\\ [10pt]\n"))
+  }
+    cat("
+      \\hline")
+    
+  cat("\\end{tabular} 
+      \\end{table}")
+
+} else {
+  cat("No se realizaron acciones indagatorias.")
+}
+
+```
+
+# ANÁLISIS
+
+```{r, echo=FALSE, results='asis'}
+sub_hecho <- hechos %>%  filter(ID == j$ID)
+
+tabla_atenuantes <- function() {
+    cat("\\setlength{\\arrayrulewidth}{0.35mm}\n")
+    cat("\\arrayrulecolor{black}\n")
+    cat("\\begin{table}\n")
+    cat("\\setlength\\extrarowheight{3pt}\n")
+    cat("\\begin{tabular}{| M{7.5cm} | M{7.5cm} |}\n")
+    cat("\\hline\n")
+    cat("\\textbf{Supuestos atenuantes} & \\textbf{Sí / No} \\\\ [10pt]\n")
+    cat("\\hline\n")
+}
+
+tabla_agravantes <- function() {
+    cat("\\setlength{\\arrayrulewidth}{0.35mm}\n")
+    cat("\\arrayrulecolor{black}\n")
+    cat("\\begin{table}\n")
+    cat("\\setlength\\extrarowheight{3pt}\n")
+    cat("\\begin{tabular}{| M{7.5cm} | M{7.5cm} |}\n")
+    cat("\\hline\n")
+    cat("\\textbf{Supuestos agravantes} & \\textbf{Sí / No} \\\\ [10pt]\n")
+    cat("\\hline\n")
+}
+
+tabla_detalle <- function() {
+    cat("\\setlength{\\arrayrulewidth}{0.35mm}\n")
+    cat("\\arrayrulecolor{black}\n")
+    cat("\\begin{table}\n")
+    cat("\\setlength\\extrarowheight{3pt}\n")
+    cat("\\begin{tabular}{| M{15cm} |}\n")
+    cat("\\hline\n")
+    cat("\\textbf{Detalle la conducta del proveedor analizada para considerar los atenuantes y agravantes:} \\\\ [10pt]\n")
+    cat("\\hline\n")
+}
+
+tabla_acciones <- function() {
+    cat("\\setlength{\\arrayrulewidth}{0.35mm}\n")
+    cat("\\arrayrulecolor{black}\n")
+    cat("\\begin{table}\n")
+    cat("\\setlength\\extrarowheight{3pt}\n")
+    cat("\\begin{tabular}{| M{7.5cm} | M{7.5cm} |}\n")
+    cat("\\hline\n")
+    cat("\\textbf{Selección de acciones} & \\textbf{Sí(1) / No(0)} \\\\ [10pt]\n")
+    cat("\\hline\n")
+}
+
+for(i in 1:nrow(sub_hecho)){
+
+  cat(paste("\\subsection{HECHO ", i,"}", collapse=" "))
+  
+  # Evaluación liminar
+  cat("\\subsubsection{Evaluación liminar}")
+  #cat(paste0("Esto es una prueba de qué es lo que se vería aquí", " ¿¿??"))
+  
+  if(sub_hecho$sino1[i] == "No") {
+    if(sub_hecho$sino4[i] == "No") {
+      if (sub_hecho$sino5[i] == "Sí") {
+        if (sub_hecho$sino6[i] == "Sí") {
+          if (sub_hecho$sinorecurtri[i] == "No") {
+            if (sub_hecho$sinorecuranu[i] == "Sí") {
+              cat("- La fiscalización del bien o servicio y hecho reportado recae en las Secretarías Técnicas de CC3, ILN o CCD.\n")
+              cat("- El equipo NO cuenta con capacidad para programar acciones de fiscalización durante el año en curso.\n")
+              cat("- El equipo SI cuenta con capacidad para programar acciones de fiscalización durante el TRIMESTRE en curso.\n")
+            } else {
+              cat("- La fiscalización del bien o servicio y hecho reportado recae en las Secretarías Técnicas de CC3, ILN o CCD.\n")
+              cat("- El equipo NO cuenta con capacidad para programar acciones de fiscalización durante el año en curso.\n")
+              cat("- El equipo NO cuenta con capacidad para programar acciones de fiscalización durante el TRIMESTRE en curso.\n")
+            }
+          } else {
+            cat("- Sí recae en las Secretarías Técnicas de CC3, ILN o CCD.\n")
+            cat("- El equipo SI cuenta con capacidad para programar acciones de fiscalización durante el año en curso.\n") }
+    } else {
+      cat("- La fiscalización del bien o servicio y hecho reportado NO se encuentra prevista en el PAF.\n")
+      cat("- Los hechos reportados NO han sido o se encuentran siendo fiscalizados por el Indecopi.\n")
+      cat("- La fiscalización de los hechos reportados SÍ es competencia del Indecopi.\n")
+      cat("- La competencia respecto de la fiscalización de los hechos reportados NO recae en las Secretarías Técnicas de CC3, ILN o CCD.\n")
+    }
+      } else {
+        cat("- La fiscalización del bien o servicio y hecho reportado NO se encuentra prevista en el PAF.\n")
+        cat("- Los hechos reportados NO han sido o se encuentran siendo fiscalizados por el Indecopi.\n")
+        cat("- La fiscalización de los hechos reportados NO es competencia del Indecopi.\n")
+      }
+    } else {
+      cat("- La fiscalización del bien o servicio y hecho reportado NO se encuentra prevista en el PAF.\n")
+      cat("- Los hechos reportados ya han sido o se encuentran siendo fiscalizados por el Indecopi.\n")
+    }
+  } else {
+      if (sub_hecho$sino2[i] == "No"){
+        cat("- La fiscalización del bien o servicio y hecho reportado se encuentra prevista en el PAF.\n")
+        cat("- No se ha realizado la selección de proveedores con respecto al bien o servicio reportado.\n")
+      } else {
+            if (sub_hecho$sino3[i] == "No") {
+              cat("- La fiscalización del bien o servicio y hecho reportado se encuentra prevista en el PAF.\n")
+              cat("- Ya se ha realizado la selección de proveedores con respecto al bien o servicio reportado.\n")
+              cat("- El proveedor vinculado al reporte no ha sido considerado como sujeto de fiscalización.\n")
+              } else {
+                cat("- La fiscalización del bien o servicio y hecho reportado se encuentra prevista en el PAF.\n")
+                cat("- Ya se ha realizado la selección de proveedores con respecto al bien o servicio reportado.\n")
+                cat("- El proveedor vinculado al reporte ya ha sido considerado como sujeto de fiscalización.\n")
+                }
+            }
+  }
+  
+  # Análisis de riesgo
+  cat("\\subsubsection{Análisis de riesgo}")
+  
+  if(is.na(sub_hecho$sinoriesgo[i])) {
+      cat("- No corresponde.\n")
+  } else {
+    if(sub_hecho$sinoriesgo[i] == "Sí") {
+              cat("- El bien o servicio reportado SÍ ha sido incluido como parte del diagnóstico para materia de protección al consumidor y competencia desleal del PAF vigente.\n")
+              cat(paste0("- El puntaje de riesgo para el bien seleccionado es: ",sub_hecho$valor_bienservicio_est[i]," y su nivel de riesgo es: ",sub_hecho$nivel_riesgo_est[i], "\n"))
+      tabla_atenuantes()
+      cat(paste0("\\hline\n Subsanación voluntaria & ", sub_hecho$atenuantes1[i], "\\\\ [10pt]\n"))
+      cat(paste0("\\hline\n Medidas para evitar nuevos casos & ", sub_hecho$atenuantes2[i], "\\\\ [10pt]\n"))
+      cat(paste0("\\hline\n Colaboración & ", sub_hecho$atenuantes3[i], "\\\\ [10pt]\n"))
+      cat(paste0("\\hline\n Otro & ", sub_hecho$atenuantes4[i], "\\\\ [10pt]\n"))
+      cat("\\hline\n")
+      cat("\\end{tabular}\n") 
+      cat("\\end{table}\n")
+      tabla_agravantes()
+      cat(paste0("\\hline\n Reincidencia en la conducta & ", sub_hecho$agravantes1[i], "\\\\ [10pt]\n"))
+      cat(paste0("\\hline\n Daño a la salud & ", sub_hecho$agravantes2[i], "\\\\ [10pt]\n"))
+      cat(paste0("\\hline\n No proporcionar información & ", sub_hecho$agravantes3[i], "\\\\ [10pt]\n"))
+      cat(paste0("\\hline\n Otro & ", sub_hecho$agravantes4[i], "\\\\ [10pt]\n"))
+      cat("\\hline\n")
+      cat("\\end{tabular}\n") 
+      cat("\\end{table}\n")
+      tabla_detalle()
+      cat(paste0("\\hline\n ", sub_hecho$name[i], "\\\\ [10pt]\n"))
+      cat("\\hline\n")
+      cat("\\end{tabular}\n") 
+      cat("\\end{table}\n")
+      cat(paste0("- El puntaje de riesgo, considerando el valor del PAF y los atenuantes y/o agravantes identificados es: ",sub_hecho$riesgoaju[i]," y su nivel de riesgo es: ",sub_hecho$nivel_riesgoaju[i], "\n"))
+      
+  } else {
+      cat("- El bien o servicio reportado NO ha sido incluido como parte del diagnóstico para materia de protección al consumidor y competencia desleal del PAF vigente.\n")
+  }
+  }
+  
+  # Selección de acciones
+  cat("\\subsubsection{Selección de acciones}")
+  if (is.na(sub_hecho$sinoriesgo[i])) {
+      cat("- No corresponde.\n")
+  } else {
+              cat(paste0("- La/s acción/es a realizar son: ",sub_hecho$acciones_est[i], "\n"))}
+}
+
+```
+
+# RESULTADOS DE LA EVALUACIÓN
+
+```{r, echo=FALSE, results='asis'}
+
+cat("\\setlength{\\arrayrulewidth}{0.35mm}\n")
+cat("\\arrayrulecolor{black}\n")
+cat("\\setlength\\extrarowheight{5pt}\n")
+cat("\\begin{longtable}{| p{14.5cm} |}\n")
+cat("\\hline\n")
+
+# Esto se repetirá en el encabezado de cada página
+cat("\\endhead\n")  # Fin del encabezado
+
+for(i in 1:nrow(sub_hecho)){
+    cat(paste("\\subsection{Resultados del Hecho ", i,"}", collapse=" "))
+    if(sub_hecho$sino1[i] == "No") {
+      if(sub_hecho$sino4[i] == "No") {
+        if (sub_hecho$sino5[i] == "Sí") {
+          if (sub_hecho$sino6[i] == "Sí") {
+            if (sub_hecho$sinorecurtri[i] == "No") {
+              if (sub_hecho$sinorecuranu[i] == "Sí") {
+              cat("- La fiscalización del bien o servicio y hecho reportado recae en las Secretarías Técnicas de CC3, ILN o CCD.\\\\ [10pt]\n")
+              cat("- El equipo NO cuenta con capacidad para programar acciones de fiscalización durante el año en curso.\\\\ [10pt]\n")
+              cat("- El equipo SI cuenta con capacidad para programar acciones de fiscalización durante el TRIMESTRE en curso.\\\\ [10pt]\n")
+            } else {
+              cat("- La fiscalización del bien o servicio y hecho reportado recae en las Secretarías Técnicas de CC3, ILN o CCD.\\\\ [10pt]\n")
+              cat("- El equipo NO cuenta con capacidad para programar acciones de fiscalización durante el año en curso.\\\\ [10pt]\n")
+              cat("- El equipo NO cuenta con capacidad para programar acciones de fiscalización durante el TRIMESTRE en curso.\\\\ [10pt]\n")
+            }
+          } else {
+            cat("- Sí recae en las Secretarías Técnicas de CC3, ILN o CCD.\\\\ [10pt]\n")
+            cat("- El equipo SI cuenta con capacidad para programar acciones de fiscalización durante el año en curso.\\\\ [10pt]\n") }
+    } else {
+      cat("- La fiscalización del bien o servicio y hecho reportado NO se encuentra prevista en el PAF.\\\\ [10pt]\n")
+      cat("- Los hechos reportados NO han sido o se encuentran siendo fiscalizados por el Indecopi.\\\\ [10pt]\n")
+      cat("- La fiscalización de los hechos reportados SÍ es competencia del Indecopi.\\\\ [10pt]\n")
+      cat("- La competencia respecto de la fiscalización de los hechos reportados NO recae en las Secretarías Técnicas de CC3, ILN o CCD.\\\\ [10pt]\n")
+    }
+      } else {
+        cat("- La fiscalización del bien o servicio y hecho reportado NO se encuentra prevista en el PAF.\\\\ [10pt]\n")
+        cat("- Los hechos reportados NO han sido o se encuentran siendo fiscalizados por el Indecopi.\\\\ [10pt]\n")
+        cat("- La fiscalización de los hechos reportados NO es competencia del Indecopi.\\\\ [10pt]\n")
+      }
+    } else {
+      cat("- La fiscalización del bien o servicio y hecho reportado NO se encuentra prevista en el PAF.\\\\ [10pt]\n")
+      cat("- Los hechos reportados ya han sido o se encuentran siendo fiscalizados por el Indecopi.\\\\ [10pt]\n")
+    }
+  } else {
+      if(sub_hecho$sino2[i] == "No") {
+        cat("- La fiscalización del bien o servicio y hecho reportado se encuentra prevista en el PAF.\\\\ [10pt]\n")
+        cat("- No se ha realizado la selección de proveedores con respecto al bien o servicio reportado.\\\\ [10pt]\n")
+      } else {
+            if (sub_hecho$sino3[i] == "No") {
+              cat("- La fiscalización del bien o servicio y hecho reportado se encuentra prevista en el PAF.\\\\ [10pt]\n")
+              cat("- Ya se ha realizado la selección de proveedores con respecto al bien o servicio reportado.\\\\ [10pt]\n")
+              cat("- El proveedor vinculado al reporte no ha sido considerado como sujeto de fiscalización.\\\\ [10pt]\n")
+              } else {
+                cat("- La fiscalización del bien o servicio y hecho reportado se encuentra prevista en el PAF.\\\\ [10pt]\n")
+                cat("- Ya se ha realizado la selección de proveedores con respecto al bien o servicio reportado.\\\\ [10pt]\n")
+                cat("- El proveedor vinculado al reporte ya ha sido considerado como sujeto de fiscalización.\\\\ [10pt]\n")
+                }
+            }
+  }
+}
+  cat("\\hline\n")
+  cat("\\end{longtable}\n")
+  
+```
+
+
+
+
+
+
+
