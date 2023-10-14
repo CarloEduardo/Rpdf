@@ -6,7 +6,7 @@ library(lubridate)
 
 # Generar información de prueba sobre la que se correrá el loop
 
-ruta    <- "C:/Users/apoyodfi9/OneDrive - INDECOPI/EDUARDO/17. Git/Galaxy/KoboLineamientosAnalysis-Tania3"
+ruta    <- "C:/Users/51985/OneDrive - INDECOPI/EDUARDO/17. Git/Galaxy/KoboLineamientosAnalysis-Tania3"
 
 input  <- file.path(ruta, "input")
 output <- file.path(ruta, "output")
